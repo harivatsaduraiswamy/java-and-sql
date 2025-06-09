@@ -1,0 +1,15 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+
+class DefaultConstructor { 
+    DefaultConstructor(){
+        System.out.println("default constructor");
+    }
+    public static void main(String[] args) {
+        //to create object
+        //classname reference variable=new classname()
+        DefaultConstructor ref= new DefaultConstructor();
+    }
+}
+
+
