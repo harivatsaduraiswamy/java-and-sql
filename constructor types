@@ -8,6 +8,7 @@ class DefaultConstructor {
         this.name=name;
         this.year=year;
         this.language=lang;
+//parameterized constructor
         System.out.println("default constructor"+" "+ name+" "+year+" "+lang);
     }
     //copy consturctor
