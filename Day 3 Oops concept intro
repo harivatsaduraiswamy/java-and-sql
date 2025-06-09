@@ -10,6 +10,12 @@ class DefaultConstructor {
         this.language=lang;
         System.out.println("default constructor"+" "+ name+" "+year+" "+lang);
     }
+    //copy consturctor
+    DefaultConstructor(DefaultConstructor copy){
+         this.name=copy.name;
+        this.year=copy.year;
+        
+    }
     
     void Display(){
         System.out.println("userdefine constructor"+" "+ name+" "+year);
@@ -17,9 +23,15 @@ class DefaultConstructor {
     public static void main(String[] args) {
         //object creation
         //classname reference variable=new classname()
-        DefaultConstructor ref= new DefaultConstructor("varshu",19,"Kannada");
+        System.out.println("original constructor");
+        DefaultConstructor ref=new DefaultConstructor("varshu",19,"Kannada");
         
+        //reference to another object
+        System.out.println("copy constructor");
+       
+       DefaultConstructor ref2=new DefaultConstructor(ref);
         ref.Display();
+        ref2.Display();
         
     }
 }
