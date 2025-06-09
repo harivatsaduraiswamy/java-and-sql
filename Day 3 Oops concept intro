@@ -10,11 +10,16 @@ class DefaultConstructor {
         this.language=lang;
         System.out.println("default constructor"+" "+ name+" "+year+" "+lang);
     }
+    
+    void Display(){
+        System.out.println("userdefine constructor"+" "+ name+" "+year);
+    }
     public static void main(String[] args) {
         //object creation
         //classname reference variable=new classname()
         DefaultConstructor ref= new DefaultConstructor("varshu",19,"Kannada");
         
+        ref.Display();
+        
     }
 }
-
