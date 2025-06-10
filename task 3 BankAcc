@@ -1,45 +1,56 @@
- class sbiAcc{
-     private String Accholder;
-     private int Balance;
-     sbiAcc(string Accholder, int Balance,int withdraw){
-     this.Accholder=Accholder;
-     this.Balance=Balance;
-     this.withdraw=withdraw;
-     
-}
-public String getAccholder(){
-    return Accholder;
-}
-public int getBalance(){
-    return Balance;
-}
-public void Deposit(int dep){
-    if(Balance > 0){
-        balance += dep;
-        //Balance = balance +dep
-        System.out.println("Deposit Amount:"+dep);
-        System.out.println("Now Current Balance:"+Balance);
+ class sbiAcc {
+    private String Accholder;
+    private int Balance;
+
+    // Constructor
+    sbiAcc(String Accholder, int Balance) {
+        this.Accholder = Accholder;
+        this.Balance = Balance;
+    }
+
+    // Getter methods
+    public String getAccholder() {
+        return Accholder;
+    }
+
+    public int getBalance() {
+        return Balance;
+    }
+
+    // Deposit method
+    public void Deposit(int dep) {
+        if (dep > 0) {
+            Balance += dep;
+            System.out.println("Deposit Amount: " + dep);
+            System.out.println("Now Current Balance: " + Balance);
+        } else {
+            System.out.println("Invalid deposit amount.");
+        }
+    }
+
+    // Setter methods
+    public void setAccholder(String Accholder) {
+        this.Accholder = Accholder;
+    }
+
+    public void setWithdraw(int withdraw) {
+        if (withdraw > 0 && withdraw <= Balance) {
+            Balance -= withdraw;
+            System.out.println("Withdrawn: " + withdraw);
+        } else {
+            System.out.println("Invalid or Insufficient Balance for withdrawal.");
+        }
     }
 }
-public void setAccholder(String Accholder){
-    this.Accholder=Accholder;
-}    
-public void setwithdraw(int withdraw){
-    Balance-=withdraw;
-}   
-public void
 
-public class BankDetails{
-    public static void main(String[] args){
-        sbiAcc ac=new sbiAcc("Hari",25000);
+public class BankDetails {
+    public static void main(String[] args) {
+        sbiAcc ac = new sbiAcc("Hari", 25000);
         ac.setAccholder("Pavithra");
-        System.out.println("Update account holder:"+ac.getAccholder());
-        System.out.println("Balance:"+ac.getBalance());
+        System.out.println("Updated account holder: " + ac.getAccholder());
+        System.out.println("Balance: " + ac.getBalance());
         ac.Deposit(5000);
         ac.setWithdraw(20000);
-        System.out.println("avail Balance:"+ac.getBalance());
-        
+        System.out.println("Available Balance: " + ac.getBalance());
     }
 }
-
-
