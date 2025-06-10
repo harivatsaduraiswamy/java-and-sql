@@ -1,0 +1,18 @@
+public class stringbuffer{
+      public static void main(String[] args){
+
+        StringBuffer sb=new StringBuffer("Hello Java");
+        String a=sb.substring(7,10);
+        System.out.println(a);
+
+    }
+}
+public class stringbuffer{
+      public static void main(String[] args){
+
+        StringBuffer sb=new StringBuffer("Hello Java");
+        String a=sb.replace(6,10,"world");
+        System.out.println(a);
+
+    }
+}
