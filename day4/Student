@@ -1,0 +1,126 @@
+import java.util.*;
+
+class Student {
+    private int studentId;
+    private String name;
+    private Map<String, Integer> marks = new HashMap<>();
+
+    public Student(int studentId, String name) {
+        this.studentId = studentId;
+        this.name = name;
+    }
+
+    public void addMark(String subject, int mark) {
+        marks.put(subject, mark);
+    }
+
+    public int getTotalMarks() {
+        int total = 0;
+        for (int mark : marks.values()) {
+            total += mark;
+        }
+        return total;
+    }
+
+    public double getAverageMarks() {
+        if (marks.size() == 0) return 0;
+        return (double) getTotalMarks() / marks.size();
+    }
+
+    public void displayResult() {
+        System.out.println("\nStudent ID: " + studentId);
+        System.out.println("Name: " + name);
+        System.out.println("Marks:");
+        for (Map.Entry<String, Integer> entry : marks.entrySet()) {
+            System.out.println("  " + entry.getKey() + ": " + entry.getValue());
+        }
+        System.out.println("Total Marks: " + getTotalMarks());
+        System.out.printf("Average Marks: %.2f%n", getAverageMarks());
+    }
+}
+
+public class StudentManagementSystem {
+    private static Scanner scanner = new Scanner(System.in);
+    private static Map<Integer, Student> students = new HashMap<>();
+
+    public static void main(String[] args) {
+        int choice;
+
+        do {
+            System.out.println("\n===== Student Management System =====");
+            System.out.println("1. Create Student");
+            System.out.println("2. Add Marks");
+            System.out.println("3. Show Result");
+            System.out.println("4. Exit");
+            System.out.print("Enter choice: ");
+            choice = scanner.nextInt();
+
+            switch (choice) {
+                case 1:
+                    createStudent();
+                    break;
+                case 2:
+                    addMarks();
+                    break;
+                case 3:
+                    showResult();
+                    break;
+                case 4:
+                    System.out.println("Exiting program...");
+                    break;
+                default:
+                    System.out.println("Invalid option! Try again.");
+            }
+        } while (choice != 4);
+    }
+
+    private static void createStudent() {
+        System.out.print("Enter Student ID: ");
+        int id = scanner.nextInt();
+        scanner.nextLine(); // consume newline
+        if (students.containsKey(id)) {
+            System.out.println("Student ID already exists!");
+            return;
+        }
+
+        System.out.print("Enter Student Name: ");
+        String name = scanner.nextLine();
+
+        Student student = new Student(id, name);
+        students.put(id, student);
+        System.out.println("Student created successfully.");
+    }
+
+    private static void addMarks() {
+        System.out.print("Enter Student ID: ");
+        int id = scanner.nextInt();
+        scanner.nextLine(); // consume newline
+
+        Student student = students.get(id);
+        if (student == null) {
+            System.out.println("Student not found!");
+            return;
+        }
+
+        System.out.print("Enter Subject: ");
+        String subject = scanner.nextLine();
+        System.out.print("Enter Marks for " + subject + ": ");
+        int marks = scanner.nextInt();
+
+        student.addMark(subject, marks);
+        System.out.println("Marks added successfully.");
+    }
+
+    private static void showResult() {
+        System.out.print("Enter Student ID: ");
+        int id = scanner.nextInt();
+
+        Student student = students.get(id);
+        if (student == null) {
+            System.out.println("Student not found!");
+            return;
+        }
+
+        student.displayResult();
+    }
+}
