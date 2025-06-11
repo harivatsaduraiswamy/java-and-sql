@@ -1,0 +1,32 @@
+public List<Employee> readAllEmployees() {
+    List<Employee> employees = new ArrayList<>();
+    File file = new File(FILE_NAME);
+    if (!file.exists()) {
+        System.out.println("File does not exist: " + file.getAbsolutePath());
+        return employees;
+    }
+
+    try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+        String line;
+        while ((line = reader.readLine()) != null) {
+            String[] parts = line.split(",");
+            if (parts.length == 4) {
+                try {
+                    String id = parts[0].trim();
+                    String name = parts[1].trim();
+                    String department = parts[2].trim();
+                    double salary = Double.parseDouble(parts[3].trim());
+                    employees.add(new Employee(id, name, department, salary));
+                } catch (NumberFormatException e) {
+                    System.err.println("Invalid salary format in line: " + line);
+                }
+            } else {
+                System.err.println("Invalid line format (expected 4 parts): " + line);
+            }
+        }
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+
+    return employees;
+}
