@@ -1,0 +1,38 @@
+class DefaultConstructor { 
+    
+    
+    String name;
+    int year;
+    String language;
+    DefaultConstructor(String name, int year, String lang){
+        this.name=name;
+        this.year=year;
+        this.language=lang;
+//parameterized constructor
+        System.out.println("default constructor"+" "+ name+" "+year+" "+lang);
+    }
+    //copy consturctor
+    DefaultConstructor(DefaultConstructor copy){
+         this.name=copy.name;
+        this.year=copy.year;
+        
+    }
+    
+    void Display(){
+        System.out.println("userdefine constructor"+" "+ name+" "+year);
+    }
+    public static void main(String[] args) {
+        //object creation
+        //classname reference variable=new classname()
+        System.out.println("original constructor");
+        DefaultConstructor ref=new DefaultConstructor("varshu",19,"Kannada");
+        
+        //reference to another object
+        System.out.println("copy constructor");
+       
+       DefaultConstructor ref2=new DefaultConstructor(ref);
+        ref.Display();
+        ref2.Display();
+        
+    }
+}
