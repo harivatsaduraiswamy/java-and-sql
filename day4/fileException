@@ -1,0 +1,15 @@
+public class Main{
+    
+    public static void main(String [] args){
+    string filename="c/Uswr//TEMp.KGISLEDU//Documents//Demo.txt";
+    try(BufferedReader br=new BufferedReader(new fileReader(filename))){
+        String Line;
+        if((Line =br.readLine()) !=null){
+            System.out.println(null);
+        }
+    }
+    catch(Exception e){
+        System.out.println("FileNotFound");
+    }
+    }
+}
