@@ -17,9 +17,9 @@ public static void main(String[] args) {
 
 
     Student ref=new Student();
-    ref.detail("sneha",250);
-    ref.detail("sneha",250,"fail");
-ref.detail("sneha",400);
-    ref.detail("sneha",400,"pass");
+    ref.detail("hari",250);
+    ref.detail("hari",250,"fail");
+ref.detail("hari",400);
+    
 }
 }
