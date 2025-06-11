@@ -1,0 +1,21 @@
+
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+         Scanner ref=new Scanner(System.in);
+        System.out.println("enter the weight");
+        int b=ref.nextInt();
+        System.out.println(b);
+        System.out.println("enter the age:");
+       
+       
+        int a=ref.nextInt();
+        System.out.println(a);
+        
+        if(b>=50 && a>=18){
+            System.out.println("Your eligible for blood donation");
+    }
+        else{
+            System.out.println("Your not eligible for blood donation");
+        
+        }
