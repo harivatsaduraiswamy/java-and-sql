@@ -1,13 +1,15 @@
-import java.util.*;
+import java.util.Scanner;
  public class Student {
       
  void detail(String name,int mark){  
+     Scanner s=new Scanner(System.in);
    System.out.println("name:"+name);
     System.out.println("mark:"+mark);
 
 
 }
     void detail(String name,int mark,String result){
+        Scanner s=new Scanner(System.in);
 System.out.println("result:"+result); 
 
 
@@ -15,11 +17,17 @@ System.out.println("result:"+result);
 }
 public static void main(String[] args) {
 
-
+System.out.println("Enter your name:");
+System.out.println("Enter your marks:");
+if (mark<400){
+    System.out.println("You failed in exam");
+    
+}
+else {
+    System.out.println ("you passed the exam");
+}
     Student ref=new Student();
-    ref.detail("hari",250);
-    ref.detail("hari",250,"fail");
-ref.detail("hari",400);
+    
     
 }
 }
