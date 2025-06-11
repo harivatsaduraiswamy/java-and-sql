@@ -1,0 +1,12 @@
+class student {
+   private int marks;
+   public result;
+   student(String name,int marks,int rollno){
+       this.name=name;
+       this.marks=marks;
+       this.rollno=rollno;
+   }
+    public static void main(String[] args) {
+        System.out.println("Try programiz.pro");
+    }
+}
