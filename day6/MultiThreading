@@ -8,7 +8,7 @@ public class Main extends Thread{
     }
 }
 class Execute{
-    public static void ma9j(String[] args){
+    public static void main(String[] args){
         Main m=new Main();
         m.start();
     }
