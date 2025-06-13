@@ -4,7 +4,7 @@ create table Student(
 
 
  insert into Student(Sname)
- values('varsha',');
+ values('varsha');
  insert into Student(Sname)
  values('harsha');
  insert into Student(Sname)
