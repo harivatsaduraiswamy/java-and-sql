@@ -1,0 +1,11 @@
+create table Course(
+  Cname varchar(20)
+);
+insert into Course(Cname)
+values ('java');
+insert into Course(Cname)
+values ('web');
+insert into Course(Cname)
+values ('fsd');
+insert into Course(Cname)
+values ('sd');
