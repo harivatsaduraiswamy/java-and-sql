@@ -1,0 +1,42 @@
+public class TicketBooking {
+
+    private int totalSeats;
+    private int remainingSeats;
+    private final Object lock = new Object(); // Use a lock object for synchronization
+
+    public TicketBooking(int totalSeats) {
+        this.totalSeats = totalSeats;
+        this.remainingSeats = totalSeats;
+    }
+
+    public synchronized void bookTickets(int ticketsToBook, String username) {
+        synchronized (lock) {
+            // Simulate booking delay
+            try {
+                Thread.sleep((long) (Math.random() * 2000)); // Random delay between 0 and 2 seconds
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
+            if (remainingSeats >= ticketsToBook) {
+                remainingSeats -= ticketsToBook;
+                System.out.println(username + " booked " + ticketsToBook + " tickets. Remaining seats: " + remainingSeats);
+            } else {
+                System.out.println(username + " failed to book tickets. Not enough seats available.");
+            }
+        }
+        // Display remaining seats after booking is complete (outside synchronized block)
+        System.out.println("Remaining seats after " + username + "'s booking: " + remainingSeats);
+    }
+
+    public static void main(String[] args) {
+        TicketBooking bookingSystem = new TicketBooking(10); // Start with 10 seats
+
+        // Simulate multiple users booking tickets
+        new Thread(() -> bookingSystem.bookTickets(2, "User1")).start();
+        new Thread(() -> bookingSystem.bookTickets(3, "User2")).start();
+        new Thread(() -> bookingSystem.bookTickets(5, "User3")).start();
+        new Thread(() -> bookingSystem.bookTickets(1, "User4")).start();
+        new Thread(() -> bookingSystem.bookTickets(2, "User5")).start();
+    }
+}
