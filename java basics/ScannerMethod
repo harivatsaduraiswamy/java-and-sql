@@ -1,0 +1,25 @@
+
+package Main;
+import java.util.Scanner;
+public class Task1 {
+	public static void main(String[] args) {
+		Scanner s=new Scanner(System.in);
+		System.out.println("Enter the name");
+		String a=s.nextLine();
+		System.out.println(a);
+		System.out.println("Enter the Physics Marks");
+		int b=s.nextInt();
+		System.out.println(b);
+		System.out.println("Enter the Chemistry Marks");
+		int c=s.nextInt();
+		System.out.println(c);
+		int total=b+c;
+		System.out.println("Total Marks:"+total);
+		double average=total /2;
+		System.out.println(" Average Marks:"+average);
+		
+				
+		
+	}
+
+}
