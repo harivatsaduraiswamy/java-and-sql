@@ -1,0 +1,19 @@
+create table Student(
+  Sname varchar[38],
+);
+
+
+ insert into Student(Sname)
+ values('varsha',');
+ insert into Student(Sname)
+ values('harsha');
+ insert into Student(Sname)
+ values('sneha');
+ insert into Student(Sname)
+ values('hema');
+ insert into Student(Sname)
+ values('ranj');
+
+
+
+
