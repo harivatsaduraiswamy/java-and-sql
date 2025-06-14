@@ -1,0 +1,25 @@
+create table bio5(
+sid int(40),
+name varchar(50),
+email varchar(20),
+depart varchar(30),
+course varchar(20)
+);
+insert into bio5(sid,name,email,depart,course)
+values(23552,'varsha','varsha@gmail.com','bca','cyber securtity');
+insert into bio5(sid,name,email,depart,course)
+values(23553,'harsha','harsha@gmail.com','it','web designing');
+insert into bio5(sid,name,email,depart,course)
+values(23554,'sneha','sneha@gmail.com','cs','java basic');
+insert into bio5(sid,name,email,depart,course)
+values(23555,'sumi','sumi@gmail.com','ct','designing');
+insert into bio5(sid,name,email,depart,course)
+values(23556,'harish','harish@gmail.com','bca','computer basics');
+
+update bio5
+set email='varsha@gmail.com',email='hari@gmail.com'
+where sid=23552;
+
+
+
+
