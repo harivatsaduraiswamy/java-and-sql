@@ -1,0 +1,13 @@
+CREATE TABLE customers (
+    id INT,
+    name VARCHAR(100),
+    city VARCHAR(50),
+    age INT,
+    email VARCHAR(100)
+);
+SELECT * FROM customers
+WHERE city = 'New York';
+SELECT * FROM customers
+WHERE age > 30;
+SELECT * FROM customers
+WHERE name LIKE '%John%';
