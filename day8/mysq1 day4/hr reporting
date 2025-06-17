@@ -1,0 +1,21 @@
+CREATE TABLE employees (
+    id INT,
+    name VARCHAR(100),
+    department VARCHAR(50),
+    salary DECIMAL(10, 2),
+    hire_date DATE
+);
+SELECT * FROM employees
+WHERE name LIKE '%John%';
+SELECT * FROM employees
+WHERE salary > 50000;
+SELECT * FROM employees
+WHERE hire_date > '2022-01-01';
+SELECT * FROM employees
+ORDER BY salary DESC;
+SELECT * FROM employees
+ORDER BY name ASC;
+SELECT * FROM employees
+WHERE department = 'HR'
+ORDER BY hire_date ASC;
+
