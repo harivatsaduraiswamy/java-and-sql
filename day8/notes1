@@ -1,0 +1,3 @@
+where sal*12>=300000;
+select distinct sal
+from emp74
