@@ -4,3 +4,6 @@ from emp74
 select *
 from emp78
 where dept='computer application' and sal<=25000;
+select *
+from emp98
+where deptno in(10,20,30,40);
