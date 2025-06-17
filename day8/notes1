@@ -10,3 +10,9 @@ where dept='computer application' and sal<=25000;
 select *
 from emp98
 where deptno in(10,20,30,40);
+select count(*) 
+from emp
+group by deptno
+select sum(comm)
+from emp
+where comm;
