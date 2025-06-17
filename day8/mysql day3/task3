@@ -1,0 +1,7 @@
+CREATE TABLE books (
+    id INT,
+    title VARCHAR(100)
+);
+
+SELECT * FROM books
+WHERE title LIKE '%magic%';
