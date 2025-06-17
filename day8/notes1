@@ -1,3 +1,6 @@
 where sal*12>=300000;
 select distinct sal
 from emp74
+select *
+from emp78
+where dept='computer application' and sal<=25000;
