@@ -1,0 +1,11 @@
+CREATE TABLE courses (
+    id INT,
+    name VARCHAR(100),
+    fee DECIMAL(10, 2)
+);
+SELECT * FROM courses
+ORDER BY fee ASC;
+
+SELECT name, fee
+FROM courses
+ORDER BY fee ASC;
