@@ -20,3 +20,8 @@ select sum(sal),job
 from emp
 group by job
 having sum(sal)>5000
+select count(*),deptno
+from emp
+where job='CLERK'
+group by deptno
+having count(*)>=2;
