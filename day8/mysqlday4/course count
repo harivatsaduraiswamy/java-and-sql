@@ -1,0 +1,16 @@
+CREATE TABLE course1 (
+    name VARCHAR(40),
+    fee INT,
+    course VARCHAR(40)
+);
+
+INSERT INTO course1 VALUES ('varsha', 20000, 'web');
+INSERT INTO course1 VALUES ('harsha', 20000, 'word');
+INSERT INTO course1 VALUES ('sumi', 20000, 'excel');
+INSERT INTO course1 VALUES ('harish', 20000, 'cyber security');
+INSERT INTO course1 VALUES ('sneha', 20000, 'fullstack');
+INSERT INTO course1 VALUES ('hema', 20000, 'software');
+select count(*)course,name
+from course1
+
+having count(*)course,name
