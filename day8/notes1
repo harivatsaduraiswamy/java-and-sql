@@ -1,4 +1,7 @@
-where sal*12>=300000;
+
+select *
+from emp98
+where empno not in(10,30);where sal*12>=300000;
 select distinct sal
 from emp74
 select *
