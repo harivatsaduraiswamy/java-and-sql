@@ -16,3 +16,7 @@ group by deptno
 select sum(comm)
 from emp
 where comm;
+select sum(sal),job
+from emp
+group by job
+having sum(sal)>5000
