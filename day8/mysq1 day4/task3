@@ -8,3 +8,8 @@ INSERT INTO product1 (product, price) VALUES ('watch', 200);
 INSERT INTO product1 (product, price) VALUES ('box', 150);
 INSERT INTO product1 (product, price) VALUES ('storage container', 250);
 INSERT INTO product1 (product, price) VALUES ('lens', 165);
+select min(price),product
+from product1
+where price;
+from product1
+where price;
