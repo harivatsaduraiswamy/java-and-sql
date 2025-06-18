@@ -55,9 +55,84 @@ case 2-data select-condition excetute
 nested subquery-a subquery written inside another subquery we can nest up to 255 subquery
 corelated subquery-doesn not work  in sql
 types of subquery
-I)single row-we can single rows
-II)multi row subquery-we can pass multiple rows
+I)single row-we can single rows = operator is worked here special operator also worked here
+II)multi row subquery-we can pass multiple rows special operator only . IN
 
 subquery operators
 I)all
 II)any
+select dname
+from dept
+where deptno=(select deptno
+             from emp
+where ename ='SCOTT');
+
+select ename
+from emp
+where deptno=(select deptno
+             from emp
+where ename ='KING');
+
+select ename,sal
+from emp
+where sal>(select avg(sal)
+           from emp
+
+);
+Input
+
+
+
+//multi row subquery
+select dname
+from dept
+where deptno IN(select deptno
+                from emp
+where ename IN('SMITH','ALLEN'));
+​//subquery operators
+select ename,sal
+from emp
+where sal>=All(select sal
+                from emp
+where deptno=10);
+
+//employee manager relationship
+select ename
+from emp
+where empno=(select mgr
+                from emp
+where ename='CLERK');
+
+//employee manager relationship example 2
+select ename
+from emp
+where empno =(select mgr 
+                from emp
+              where empno=(select mgr
+                           from emp
+where ename='SMITH'));
+//employee manager relationship example 
+
+select ename
+from emp
+where mgr =(select empno
+                from emp
+where ename='KING');
+//inner join 
+select sal,dname
+from emp ,dept
+where emp .deptno=dept .deptno and dname='ACCOUNTING';
+//outer join
+select  dname
+from emp left outer join dept
+on emp .deptno=dept .deptno ;
+//right outer
+select emp
+from emp right outer join dept
+on emp .deptno=dept .deptno ;
+//full outer join
+select emp
+from emp full outer join dept
+on emp .deptno=dept .deptno ;//mysql does not support full outer join dept
+                                                         
+
