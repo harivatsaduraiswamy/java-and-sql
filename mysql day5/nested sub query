@@ -47,3 +47,17 @@ where sal=(select min(sal)
                       where sal>(select min (sal)
 from emp
 )));
+
+//subquery notes
+subquery - 
+case 1-unknown 
+case 2-data select-condition excetute
+nested subquery-a subquery written inside another subquery we can nest up to 255 subquery
+corelated subquery-doesn not work  in sql
+types of subquery
+I)single row-we can single rows
+II)multi row subquery-we can pass multiple rows
+
+subquery operators
+I)all
+II)any
