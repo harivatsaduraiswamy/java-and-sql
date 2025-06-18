@@ -37,17 +37,44 @@ INSERT INTO dept VALUES ('10','ACCOUNTING','NEW YORK');
 INSERT INTO dept VALUES ('20','RESEARCH','DALLAS');
 INSERT INTO dept VALUES ('30','SALES','CHICAGO');
 INSERT INTO dept VALUES ('40','OPERATIONS','BOSTON');
+//coworkers of the king
+select ename
+from emp
+where deptno=(select deptno
+             from emp
+where ename ='KING');
 
 select dname
 from dept
 where deptno=(select deptno
              from emp
 where ename ='SCOTT');
+//max salary
 
 select ename
 from emp
-where deptno=(select deptno
-             from emp
-where ename ='KING');
+where sal=(select max(sal)
+             from emp);
+);
+
+select ename
+from emp
+where sal>(select sal
+           from emp
+where ename='SMITH');
+//miniumum salary of the manager
+select ename
+from emp
+where sal=(select min(sal)
+           from emp 
+where job='MANAGER');
+//avg salary of the entire company
+select *
+from emp
+where sal>(select avg(sal)
+           from emp
+
+);
+
 
 
