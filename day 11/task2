@@ -1,0 +1,4 @@
+select sname,marks
+from marks1
+where marks=(select max(marks)
+             from marks1)
