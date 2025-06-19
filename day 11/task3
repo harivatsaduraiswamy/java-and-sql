@@ -1,0 +1,18 @@
+create table orders5(
+ product varchar,
+
+create table customer(
+  name varchar,
+  int price
+);
+insert into orders('anu',400);
+insert into orders('abi',1000);
+insert into orders('sai',900);
+insert into orders('hari',400);
+
+
+
+
+
+select*
+from orders5 sname join customer
