@@ -1,3 +1,12 @@
+create table marks(
+  sname varchar(20),
+  marks int
+);
+insert into marks values ('abi',200);
+insert into marks values ('anu',400);
+insert into marks values ('sai',250);
+insert into marks values ('priya',247);
+insert into marks values ('banu',200);
 select sname,marks
 from marks1
 where marks=(select max(marks)
