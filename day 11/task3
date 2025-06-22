@@ -1,5 +1,14 @@
 create table orders5(
  product varchar,
+ quantity int
+insert into orders('dress',4);
+insert into orders('watch',5);
+insert into orders('containers',4);
+insert into orders('box',2);
+
+
+
+);
 
 create table customer(
   name varchar,
